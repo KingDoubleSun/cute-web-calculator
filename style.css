@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7); /* Light pink gradient */
+    font-family: 'Arial', sans-serif; /* Fallback font */
+    margin: 0;
+}
+
+.calculator {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 25px; /* More rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    position: relative; /* For positioning decorations */
+    border: 3px solid #f8bbd0; /* Pink border */
+}
+
+.display-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#display {
+    width: calc(100% - 20px); /* Adjust width considering padding */
+    height: 60px;
+    background-color: #fce4ec; /* Lighter pink display */
+    border: none;
+    border-radius: 15px;
+    text-align: right;
+    padding: 0 10px;
+    font-size: 2.5em; /* Larger font size */
+    color: #ad1457; /* Darker pink text */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Pacifico', cursive; /* Cute font */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; /* Increased gap */
+}
+
+button {
+    height: 60px;
+    border: none;
+    border-radius: 50%; /* Circular buttons */
+    background-color: #f8bbd0; /* Pink buttons */
+    color: #880e4f; /* Dark pink text */
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #f48fb1; /* Slightly darker pink on hover */
+}
+
+button:active {
+    background-color: #f06292; /* Even darker pink when pressed */
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button.operator {
+    background-color: #ff80ab; /* Brighter pink for operators */
+    color: white;
+}
+
+button.operator:hover {
+    background-color: #ff4081;
+}
+
+button.operator:active {
+    background-color: #f50057;
+}
+
+button.equals {
+    background-color: #ec407a; /* Special color for equals */
+    grid-column: span 1; /* Keep equals as single button */
+}
+
+button.equals:hover {
+    background-color: #d81b60;
+}
+
+button.equals:active {
+    background-color: #c2185b;
+}
+
+
+button.zero {
+    grid-column: span 2; /* Make zero button wider */
+    border-radius: 30px; /* Keep rounded ends */
+}
+
+/* Decorations */
+.decoration {
+    position: absolute;
+    font-size: 1.8em;
+    opacity: 0.7;
+    user-select: none; /* Prevent selection */
+}
+
+.top-left { top: -15px; left: -15px; transform: rotate(-15deg); }
+.top-right { top: -15px; right: -15px; transform: rotate(15deg); }
+.bottom-left { bottom: -15px; left: -15px; transform: rotate(15deg); }
+.bottom-right { bottom: -15px; right: -15px; transform: rotate(-15deg); }
